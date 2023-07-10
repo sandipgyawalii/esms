@@ -14,6 +14,7 @@ class GroupController extends Controller
     {
         $user_id = Auth::id();
         // dd($user_id);
+        dd('test');
         $data['user'] = User::where('id','=',$user_id)->first();
         $groupdetails = Groups::where('user_id','=',$user_id)->get();
     
