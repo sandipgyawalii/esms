@@ -11,6 +11,9 @@ class Groups extends Model
     protected $fillable = [
         'group_name',
         'user_id',
-        'member_email'
+        
+    ];
+    protected $cast = [
+        'member_email'=> 'array'
     ];
 }

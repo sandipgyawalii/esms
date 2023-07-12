@@ -33,7 +33,7 @@
                 <a href="adminreports" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-paperclip me-2"></i>Reports</a>
 
-                <a href="adminlogout" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                <a href="admin/logout" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
                         
             </div>

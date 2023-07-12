@@ -49,7 +49,9 @@ Route::group(['middleware' => 'user'],function(){
     Route::post('user/updateuserdetails',[UserDashboardController::class,'updateuserdetails']);
     Route::get('user/deleteuserdetails',[UserDashboardController::class,'deleteuserdetails']);
     Route::get('user/usergroupspage',[GroupController::class,'index']);
-    Route::post('user/creategroup',[GroupController::class,'creategroup']);
+    Route::get('user/creategroup',[GroupController::class,'creategroup']);
+    Route::get('user/viewgroups/{id}',[GroupController::class,'viewgroup']);
+
 });
 
 

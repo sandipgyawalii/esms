@@ -14,7 +14,7 @@ class GroupController extends Controller
     {
         $user_id = Auth::id();
         // dd($user_id);
-        dd('test');
+        
         $data['user'] = User::where('id','=',$user_id)->first();
         $groupdetails = Groups::where('user_id','=',$user_id)->get();
     
@@ -29,9 +29,7 @@ class GroupController extends Controller
             'group_name' => 'required',
             'member_email' =>'required',
         ]);
-    //     $inputs = $req->all();
-    //    $member_email = $inputs['member_email'] ;
-    //    $inputs['member_email'] = implode(',',$member_email);
+  
        
        $group = new Groups;
 
@@ -42,6 +40,25 @@ class GroupController extends Controller
 
        return redirect('user/usergroupspage')->with('status', 'Created Successfully'); 
     }
+public function viewgroup($id)
+{
+ $group_id = $id;
+ $user_id = Auth::id();
+ $details = Groups::where([['user_id','=',$user_id],
+ ['id','=',$group_id]
+ ])->get();
 
+ $singlevalue = Groups::where([['user_id','=',$user_id],
+ ['id','=',$group_id]
+ ])->pluck('member_email')->first();
+
+$membersdetails = json_decode($singlevalue);  
+$test = explode(",", $membersdetails[0]);
+// dd($test);  
+// $all = Groups::all();
+// $alll = $all->toArray();
+// dd($membersdetails);
+return view('user.viewgroup',compact('details','test'));
+}
 
 }

@@ -32,7 +32,7 @@
               <div class="card-body ">
           <div class="container mt-4">  
            <h1 class="fs-4 card-title fw-bold mb-2"></h1>
-          <form action="{{url('user/creategroup')}}" method="post">
+          <form action="{{url('user/creategroup')}}" method="get">
               @csrf
               <div class="form-group mb-3">
                   <label for="Group Name" class="text-muted">Group Name</label>
@@ -79,21 +79,23 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">Group Name</th>
+            <th scope="col">Groups Name</th>
             <th scope="col">View</th>
+
 
           </tr>
         </thead>
         <tbody>
             @foreach ($groupdetails as $row)
             <tr>
-            <td>{{$row->group_name}}</td>
-            <form action="manage" method="post">
+              <td>{{$row->group_name}} 
+              <span class=" bg-info bg-gradient text-dark rounded-circle p-1">14</span>       
+                </td>  
+          
             <td>
-                <input type="submit" value="View" class="btn btn-primary">
+              <a href="/user/viewgroups/{{$row->id}}" class="btn btn-primary">View Group </a> 
             </td>
            
-        </form>                
           </tr>
       
           @endforeach
