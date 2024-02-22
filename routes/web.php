@@ -51,6 +51,11 @@ Route::group(['middleware' => 'user'],function(){
     Route::get('user/usergroupspage',[GroupController::class,'index']);
     Route::get('user/creategroup',[GroupController::class,'creategroup']);
     Route::get('user/viewgroups/{id}',[GroupController::class,'viewgroup']);
+    Route::get('user/deletegroup/{id}',[GroupController::class,'deletegroup']);
+    Route::get('user/deletemember/{memberemail}/{id}/{i}',[GroupController::class,'deletemember']);
+    Route::get('user/updategroupdetails/{id}',[GroupController::class,'updategroup']);
+
+    
 
 });
 

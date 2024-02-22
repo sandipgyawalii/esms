@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-md-6 mt-2">
           <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-warning mb-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
       Create Group
     </button>
     
@@ -80,7 +80,10 @@
         <thead>
           <tr>
             <th scope="col">Groups Name</th>
-            <th scope="col">View</th>
+            <th scope="col">Action</th>
+            <th scope="col">Delete</th>
+
+
 
 
           </tr>
@@ -93,8 +96,15 @@
                 </td>  
           
             <td>
-              <a href="/user/viewgroups/{{$row->id}}" class="btn btn-primary">View Group </a> 
+              <a href="/user/viewgroups/{{$row->id}}" class=""><i class="fa fa-lg fa-cog" aria-hidden="true"></i>
+
+              </a> 
             </td>
+            <td>
+              <a href="/user/deletegroup/{{$row->id}}" class=""><i class="fa-lg fa fa-trash" aria-hidden="true"></i>
+              </a> 
+            </td>
+            
            
           </tr>
       
